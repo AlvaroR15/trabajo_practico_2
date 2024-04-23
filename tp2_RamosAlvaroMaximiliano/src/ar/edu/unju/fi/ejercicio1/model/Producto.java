@@ -1,11 +1,11 @@
 package ar.edu.unju.fi.ejercicio1.model;
 
 public class Producto {
-	String codigo;
-	String descripcion;
-	Double precioUnitario;
-	OrigenFabricacion origenFabricacion;
-	Categoria categoria;
+	private String codigo;
+	private String descripcion;
+	private Double precioUnitario;
+	private OrigenFabricacion origenFabricacion;
+	private Categoria categoria;
 	
 	public enum OrigenFabricacion {
 		ARGENTINA, CHINA, BRASIL, URUGUAY
