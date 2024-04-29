@@ -6,6 +6,7 @@ public class Producto {
 	private Double precioUnitario;
 	private OrigenFabricacion origenFabricacion;
 	private Categoria categoria;
+
 	
 	public enum OrigenFabricacion {
 		ARGENTINA, CHINA, BRASIL, URUGUAY
