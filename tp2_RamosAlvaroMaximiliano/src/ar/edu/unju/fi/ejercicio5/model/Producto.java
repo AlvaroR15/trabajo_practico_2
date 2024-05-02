@@ -1,4 +1,8 @@
-package ar.edu.unju.fi.ejercicio1.model;
+package ar.edu.unju.fi.ejercicio5.model;
+
+
+import ar.edu.unju.fi.ejercicio1.model.Producto.OrigenFabricacion;
+import ar.edu.unju.fi.ejercicio1.model.Producto.Categoria;
 
 public class Producto {
 	private String codigo;
@@ -6,6 +10,7 @@ public class Producto {
 	private Double precioUnitario;
 	private OrigenFabricacion origenFabricacion;
 	private Categoria categoria;
+	private Boolean stock;
 
 	
 	public enum OrigenFabricacion {
@@ -21,12 +26,13 @@ public class Producto {
 	}
 
 	public Producto(String codigo, String descripcion, Double precioUnitario, OrigenFabricacion origenFabricacion,
-			Categoria categoria) {
+			Categoria categoria, Boolean stock) {
 		this.codigo = codigo;
 		this.descripcion = descripcion;
 		this.precioUnitario = precioUnitario;
 		this.origenFabricacion = origenFabricacion;
 		this.categoria = categoria;
+		this.stock = stock;
 	}
 
 	public String getCodigo() {
@@ -69,6 +75,14 @@ public class Producto {
 		this.categoria = categoria;
 	}
 
+
+	public Boolean getStock() {
+		return stock;
+	}
+
+	public void setStock(Boolean stock) {
+		this.stock = stock;
+	}
 
 	@Override
 	public String toString() {
