@@ -20,13 +20,20 @@ public class Main {
 	
 	public static void main(String[] args) {
 		precargarProductos();
-		//mostrarOpciones();
-		//mostrarProductosDisponibles();
-		// mostrarProductosFaltantes();
-		//incrementarPrecioProductos();
-		// mostrarProductosElectrohogar();
-		//ordenarProductosPorPrecioDescendente();
-		mostrarProductosEnMayusculas();
+		Byte opcion;
+		do {
+			opcion = mostrarOpciones();
+			switch(opcion) {
+			case 1: mostrarProductosDisponibles();break;
+			case 2: mostrarProductosFaltantes();break;
+			case 3: incrementarPrecioProductos();break;
+			case 4: mostrarProductosElectrohogar();break;
+			case 5: ordenarProductosPorPrecioDescendente();break;
+			case 6: mostrarProductosEnMayusculas();break;
+			case 7: System.out.println("------- FIN DEL PROGRAMA --------");break;
+			default: System.out.println("Debes ingresar una opción válida");
+			}
+		} while(opcion != 7);		
 	}
 
 	
@@ -56,7 +63,6 @@ public class Main {
 	
 	public static Byte mostrarOpciones() {
 		Byte option = null;
-		Boolean salida = false;
 		do {
 			try {
 				System.out.println("MENU DE OPCIONES");
@@ -66,18 +72,13 @@ public class Main {
 				System.out.println("4 - Mostrar los productos que corresponden a la categoría Electrohogar y estén disponibles para la venta");
 				System.out.println("5 - Ordenar los productos por precio de forma descendente.");
 				System.out.println("6 - Mostrar los productos con los nombres en mayúsculas.");
+				System.out.println("7 - Salir del programa.");
 				option = scanner.nextByte();scanner.nextLine();
-				Boolean message = option < 1 || option > 6;
-				if (option < 1 || option > 6) {
-					System.out.println("Debes ingresar un número solicitado dentro del rango");
-				} else {
-					salida = true;
-				}
 			} catch(Exception e) {
 				System.out.println("ERROR: debes ingresar un número para una de las opciones");
 				scanner.nextLine();
 			}
-		} while(!salida);
+		} while(option < 1 || option > 7 || option == null);
 		return option;
 	}
 	
