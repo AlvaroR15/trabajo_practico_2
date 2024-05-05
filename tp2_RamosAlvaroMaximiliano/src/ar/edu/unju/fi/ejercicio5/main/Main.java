@@ -19,8 +19,16 @@ public class Main {
 	
 	public static void main(String[] args) {
 		precargarProductos();
-		mostrarProductos();
-		realizarCompra();
+		Integer opcion;
+		do {
+			opcion = mostrarOpciones();
+			switch (opcion) {
+			case 1: mostrarProductos();break;
+			case 2: realizarCompra();break;
+			case 3: System.out.println("-----FIN DEL PROGRAMA-----");break;
+			default: System.out.println("Opción inválida.");
+			}
+		} while(opcion != 3);
 	}
 
 	
